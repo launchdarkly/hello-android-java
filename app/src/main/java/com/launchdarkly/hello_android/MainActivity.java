@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (BOOLEAN_FLAG_KEY == "my-boolean-flag") {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("BOOLEAN_FLAG_KEY was not customized for your account.");
+            builder.setMessage("BOOLEAN_FLAG_KEY was not customized for this application.");
             builder.create().show();
         }
 
