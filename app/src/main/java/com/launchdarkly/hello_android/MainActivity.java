@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (LAUNCHDARKLY_MOBILE_KEY == "mobile-key-from-launch-darkly-website") {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setMessage("LAUNCHDARKLY_MOBILE_KEY was not customized for your account.");
+            builder.setMessage("LAUNCHDARKLY_MOBILE_KEY was not customized for this application.");
             builder.create().show();
         }
 
