@@ -19,9 +19,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    namespace 'com.launchdarkly.hello_android'
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.launchdarkly:launchdarkly-android-client-sdk:4.2.2'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.launchdarkly:launchdarkly-android-client-sdk:5.1.1'
 }

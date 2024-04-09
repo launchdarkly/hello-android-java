@@ -18,7 +18,7 @@ public class MainApplication extends Application {
 
         // Set LAUNCHDARKLY_MOBILE_KEY to your LaunchDarkly mobile key found on the LaunchDarkly
         // dashboard in the start guide.
-        LDConfig ldConfig = new LDConfig.Builder()
+        LDConfig ldConfig = new LDConfig.Builder(LDConfig.Builder.AutoEnvAttributes.Enabled)
                 .mobileKey(LAUNCHDARKLY_MOBILE_KEY)
                 .build();
 
