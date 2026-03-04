@@ -34,7 +34,7 @@ jobs:
 
       - name: Configure feature flag key
         run: |
-          sed -i "s/my-boolean-flag/$LAUNCHDARKLY_FLAG_KEY/" app/src/main/java/com/launchdarkly/hello_android/MainActivity.java
+          sed -i '0,/my-boolean-flag/{s/my-boolean-flag/'"$LAUNCHDARKLY_FLAG_KEY"'/}' app/src/main/java/com/launchdarkly/hello_android/MainActivity.java
 
       # https://github.com/actions/setup-java/releases/tag/v4.7.1
       - name: Setup Java
@@ -72,5 +72,7 @@ jobs:
           script: |
             adb install app/build/outputs/apk/debug/app-debug.apk
             adb shell am start -n com.launchdarkly.hello_android/.MainActivity
-            sleep 15
-            adb exec-out uiautomator dump /dev/tty | grep -oi 'Feature flag.*is true'
+            sleep 30
+            adb exec-out uiautomator dump /dev/tty > /tmp/uidump.xml
+            cat /tmp/uidump.xml
+            grep -oi 'Feature flag.*is true' /tmp/uidump.xml
