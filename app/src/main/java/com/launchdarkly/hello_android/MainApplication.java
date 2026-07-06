@@ -38,7 +38,10 @@ public class MainApplication extends Application {
                     .build();
         }
 
-        LDClient.init(this, ldConfig, context);
+        // Initialize the client and wait up to 5 seconds for it to receive the latest flag
+        // values. If initialization does not complete within the timeout, the client is still
+        // returned and can be used with cached values.
+        LDClient.init(this, ldConfig, context, 5);
     }
 
     private boolean isUserLoggedIn() {
