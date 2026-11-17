@@ -18,10 +18,10 @@ jobs:
       contents: read
     steps:
       # https://github.com/actions/checkout/releases/tag/v4.2.2
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # https://github.com/launchdarkly/gh-actions/releases/tag/release-secrets-v1.2.0
-      - uses: launchdarkly/gh-actions/actions/release-secrets@bbbbbda684f500766264e7fe327668094ba83d1c # release-secrets-v1.2.0
+      - uses: launchdarkly/gh-actions/actions/release-secrets@39e06a6826b5f784225cc1e40077204d4306e22c # release-secrets-v1.2.1
         name: 'Get mobile key and flag key'
         with:
           aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
@@ -38,7 +38,7 @@ jobs:
 
       # https://github.com/actions/setup-java/releases/tag/v4.7.1
       - name: Setup Java
-        uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 # v4.7.1
+        uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
         with:
           distribution: temurin
           java-version: 17
@@ -65,7 +65,7 @@ jobs:
 
       # https://github.com/reactivecircus/android-emulator-runner/releases/tag/v2.34.0
       - name: Run on emulator
-        uses: reactivecircus/android-emulator-runner@324029e2f414c084d8b15ba075288885e74aef9c # v2.34.0
+        uses: reactivecircus/android-emulator-runner@a421e43855164a8197daf9d8d40fe71c6996bb0d # v2.38.0
         with:
           api-level: 29
           arch: x86_64
